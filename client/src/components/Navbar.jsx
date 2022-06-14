@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #222222;
   ${mobile({ padding: "10px 0px" })}
 `;
 
@@ -23,12 +24,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-`;
-
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
-  ${mobile({ display: "none" })}
+  color: white;
 `;
 
 const SearchContainer = styled.div`
@@ -37,10 +33,13 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  background-color: #222222;
 `;
 
 const Input = styled.input`
   border: none;
+  color: white;
+  background-color: #222222;
   ${mobile({ width: "50px" })}
 `;
 
@@ -50,7 +49,9 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
-  font-weight: bold;
+  font-weight: 600;
+  color: white;
+  font-family: 'Teko', sans-serif;
   ${mobile({ fontSize: "24px" })}
 `;
 const Right = styled.div`
@@ -65,6 +66,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  color: white;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -74,14 +76,13 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Search" />
-            <Search style={{ color: "gray", fontSize: 16 }} />
+            <Search style={{ color: "white", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>LAMA.</Logo>
+          <Logo>META SHOPPING</Logo>
         </Center>
         <Right>
           <MenuItem>REGISTER</MenuItem>

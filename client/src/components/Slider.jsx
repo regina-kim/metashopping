@@ -3,6 +3,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
 import { mobile } from "../responsive";
+import Viewer from './3D.jsx';
+
 
 const Container = styled.div`
   width: 100%;
@@ -42,41 +44,53 @@ const Wrapper = styled.div`
 const Slide = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
 `;
 
 const ImgContainer = styled.div`
-  height: 100%;
-  flex: 1;
+  height: 80%;
+  position: absolute;
+  align-items: center;
 `;
 
 const Image = styled.img`
-  height: 80%;
+  height: 100%;
 `;
 
 const InfoContainer = styled.div`
-  flex: 1;
-  padding: 50px;
+  height: 100%;
+  padding: 150px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(34, 34, 34, 0.4);
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+  font-family: 'Teko', sans-serif;
+  color: white;
 `;
 
 const Desc = styled.p`
   margin: 50px 0px;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+  color: white;
 `;
 
 const Button = styled.button`
   padding: 10px;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 20px;
-  background-color: transparent;
   cursor: pointer;
+  color: #222222;
+  background-color: white;
+  border-radius : 10px;
+  border-color: transparent;
 `;
 
 const Slider = () => {
@@ -98,12 +112,12 @@ const Slider = () => {
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
-              <Image src={item.img} />
+              <Viewer/>
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
+              <Button>Start Shopping</Button>
             </InfoContainer>
           </Slide>
         ))}
